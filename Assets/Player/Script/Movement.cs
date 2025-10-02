@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     Rigidbody2D rigid;
     Collision coll;
+    SpriteRenderer spriteRenderer;
 
     public float speed = 10.0f;
     public float jumpSpeed = 10.0f;
@@ -23,6 +24,7 @@ public class Movement : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collision>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -61,6 +63,15 @@ public class Movement : MonoBehaviour
         Vector2 curVector = new Vector2(xInput * speed, rigid.velocity.y);
 
         rigid.velocity = Vector2.Lerp(rigid.velocity, curVector, 10.0f * Time.deltaTime);
+
+        if (xInput == 1)
+        {
+            spriteRenderer.flipX = false;
+        }
+        if (xInput == -1)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     void jump()
