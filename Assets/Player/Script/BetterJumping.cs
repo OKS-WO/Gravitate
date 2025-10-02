@@ -25,11 +25,11 @@ public class BetterJumping : MonoBehaviour
             {
                 rigid.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplier * Time.fixedDeltaTime;
             }
-            else if (rigid.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+            else if (rigid.velocity.y > 0 && !Input.GetKey(KeyCode.Z))
             {
                 rigid.velocity += Vector2.up * Physics2D.gravity.y * lowJumpMultiplier * Time.fixedDeltaTime;
             }
-            else if (rigid.velocity.y > 0 && Input.GetKey(KeyCode.Space))
+            else if (rigid.velocity.y > 0 && Input.GetKey(KeyCode.Z))
             {
                 rigid.velocity += Vector2.up * Physics2D.gravity.y * highJumpMultiplier * Time.fixedDeltaTime;
             }

@@ -38,7 +38,7 @@ public class AnimController : MonoBehaviour
             animator.SetBool("isFalling", true);
         }
 
-        if (rigid.velocity.y > 0)
+        if (rigid.velocity.y > 0 && !coll.isGround)
         {
             animator.SetBool("isJumping", true);
         }
