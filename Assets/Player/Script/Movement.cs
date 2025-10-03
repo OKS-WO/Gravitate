@@ -8,6 +8,10 @@ public class Movement : MonoBehaviour
     Collision coll;
     SpriteRenderer spriteRenderer;
 
+    HingeJoint2D hinJoint;
+    Rigidbody2D nearRopeRigid;
+
+
     public float speed = 10.0f;
     public float jumpSpeed = 10.0f;
     public float dashSpeed = 20.0f;
@@ -15,7 +19,9 @@ public class Movement : MonoBehaviour
     public bool isDashing = false;
     public bool isClimbing = false;
     public bool isWallJumping = false;
+    public bool isSwing = false;
     public int numberOfGravityCore = 0;
+
     // Start is called before the first frame update
 
     private float xInput = 0f;
@@ -25,6 +31,7 @@ public class Movement : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collision>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        hinJoint = GetComponent<HingeJoint2D>();
     }
 
     // Update is called once per frame
@@ -42,9 +49,23 @@ public class Movement : MonoBehaviour
 
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKey(KeyCode.C) && coll.isRope && !isWallJumping) 
+        {
+            if (hinJoint.connectedBody == null)
+            {
+                hinJoint.enabled = true;
+                hinJoint.connectedBody = nearRopeRigid;
+            }
+        }
+        else
+        {
+            hinJoint.connectedBody = null;
+            hinJoint.enabled = false;
+        }
     }
 
-    private void FixedUpdate()
+	private void FixedUpdate()
     {
         if (isDashing == false)
         {
@@ -60,10 +81,11 @@ public class Movement : MonoBehaviour
 
     void move()
     {
-        Vector2 curVector = new Vector2(xInput * speed, rigid.velocity.y);
-
-        rigid.velocity = Vector2.Lerp(rigid.velocity, curVector, 10.0f * Time.deltaTime);
-
+        if (Mathf.Abs(rigid.velocity.x) < speed)
+        {
+            Vector2 desireVector = new Vector2(xInput * speed, rigid.velocity.y);
+            rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
+        }
         if (xInput == 1)
         {
             spriteRenderer.flipX = false;
@@ -80,8 +102,9 @@ public class Movement : MonoBehaviour
         {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpSpeed);
         }
-        else if (coll.isLeftWall || coll.isRightWall)
+        else if (coll.isLeftWall || coll.isRightWall||(coll.isRope&&hinJoint.connectedBody!=null))
         {
+            hinJoint.connectedBody = null;
             int dir = coll.isLeftWall ? 1 : -1;
             StartCoroutine(wallJump(dir));
         }
@@ -90,8 +113,8 @@ public class Movement : MonoBehaviour
     IEnumerator wallJump(int dir)
     {
         isWallJumping = true;
-        rigid.velocity = new Vector2(dir * speed*2, jumpSpeed);
-        yield return new WaitForSeconds(0.15f);
+        rigid.velocity = new Vector2(dir * speed * 0.8f, jumpSpeed);
+        yield return new WaitForSeconds(0.5f);
         isWallJumping = false;
     }
 
@@ -134,4 +157,13 @@ public class Movement : MonoBehaviour
             }
         }
     }
+
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Rope"))
+		{
+            nearRopeRigid = collision.gameObject.GetComponent<Rigidbody2D>();
+        }
+
+	}
 }

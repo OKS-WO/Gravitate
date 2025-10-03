@@ -4,6 +4,7 @@ public class Collision : MonoBehaviour
 {
     [Header("Layers")]
     public LayerMask groundLayer;
+    public LayerMask ropeLayer = 9;
 
     [Space]
 
@@ -11,6 +12,8 @@ public class Collision : MonoBehaviour
     public bool isLeftWall;
     public bool isRightWall;
     public bool dashReady;
+
+    public bool isRope;
 
     [Space]
 
@@ -24,6 +27,9 @@ public class Collision : MonoBehaviour
     public Vector2 rightOffset = new Vector2(0.5f, 0f);
     public Vector2 rightBoxSize = new Vector2(0.2f, 0.5f); // 박스의 가로, 세로 크기
 
+    public Vector2 Offset = new Vector2(-0.04f, 0f);
+    public Vector2 BoxSize = new Vector2(0.9f, 1f); // 박스의 가로, 세로 크기
+
 
     void Update()
     {
@@ -31,6 +37,7 @@ public class Collision : MonoBehaviour
         isGround = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, groundBoxSize, 0f, groundLayer);
         isLeftWall = Physics2D.OverlapBox((Vector2)transform.position + leftOffset, leftBoxSize, 0f, groundLayer);
         isRightWall = Physics2D.OverlapBox((Vector2)transform.position + rightOffset, rightBoxSize, 0f, groundLayer);
+        isRope= Physics2D.OverlapBox((Vector2)transform.position + Offset, BoxSize, 0f, ropeLayer);
         if (isGround||isLeftWall||isRightWall) dashReady = true;
     }
 
@@ -41,5 +48,6 @@ public class Collision : MonoBehaviour
         Gizmos.DrawWireCube((Vector2)transform.position + bottomOffset, groundBoxSize);
         Gizmos.DrawWireCube((Vector2)transform.position + leftOffset, leftBoxSize);
         Gizmos.DrawWireCube((Vector2)transform.position + rightOffset, rightBoxSize);
+        Gizmos.DrawWireCube((Vector2)transform.position + Offset, BoxSize);
     }
 }
