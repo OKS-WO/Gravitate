@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rope
+  - Rock
+  - Water
+  - Air
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - Platform
   - Rope
   - 
-  - 
-  - 
-  - 
+  - Rock
+  - Water
+  - Air
   - 
   - 
   - 

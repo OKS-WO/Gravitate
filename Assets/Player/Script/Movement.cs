@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     Rigidbody2D rigid;
     Collision coll;
     SpriteRenderer spriteRenderer;
+    ElementController element;
 
     HingeJoint2D hinJoint;
     Rigidbody2D nearRopeRigid;
@@ -32,6 +33,7 @@ public class Movement : MonoBehaviour
         coll = GetComponent<Collision>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         hinJoint = GetComponent<HingeJoint2D>();
+        element = GetComponent<ElementController>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,11 @@ public class Movement : MonoBehaviour
             hinJoint.connectedBody = null;
             hinJoint.enabled = false;
         }
+
+		if (coll.isAir && coll.dashReady)
+		{
+            StartCoroutine(dash());
+        }
     }
 
 	private void FixedUpdate()
@@ -81,9 +88,14 @@ public class Movement : MonoBehaviour
 
     void move()
     {
-        if (Mathf.Abs(rigid.velocity.x) < speed)
+        if (Mathf.Abs(rigid.velocity.x) < speed && !element.isSetting)
         {
             Vector2 desireVector = new Vector2(xInput * speed, rigid.velocity.y);
+            rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
+        }
+		if (element.isSetting)
+		{
+            Vector2 desireVector = new Vector2(0, 0);
             rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
         }
         if (xInput == 1)

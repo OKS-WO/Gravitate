@@ -6,6 +6,8 @@ public class Collision : MonoBehaviour
     public LayerMask groundLayer;
     public LayerMask ropeLayer = 9;
 
+    public LayerMask AirLayer = 13;
+
     [Space]
 
     public bool isGround;
@@ -14,6 +16,7 @@ public class Collision : MonoBehaviour
     public bool dashReady;
 
     public bool isRope;
+    public bool isAir;
 
     [Space]
 
@@ -38,6 +41,9 @@ public class Collision : MonoBehaviour
         isLeftWall = Physics2D.OverlapBox((Vector2)transform.position + leftOffset, leftBoxSize, 0f, groundLayer);
         isRightWall = Physics2D.OverlapBox((Vector2)transform.position + rightOffset, rightBoxSize, 0f, groundLayer);
         isRope= Physics2D.OverlapBox((Vector2)transform.position + Offset, BoxSize, 0f, ropeLayer);
+
+        isAir = Physics2D.OverlapBox((Vector2)transform.position + Offset, BoxSize, 0f, AirLayer);
+
         if (isGround||isLeftWall||isRightWall) dashReady = true;
     }
 
