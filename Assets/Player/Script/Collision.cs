@@ -38,8 +38,8 @@ public class Collision : MonoBehaviour
     {
         // Physics2D.OverlapBox를 사용하여 isGround 변수 업데이트
         isGround = Physics2D.OverlapBox((Vector2)transform.position + bottomOffset, groundBoxSize, 0f, groundLayer);
-        isLeftWall = Physics2D.OverlapBox((Vector2)transform.position + leftOffset, leftBoxSize, 0f, groundLayer);
-        isRightWall = Physics2D.OverlapBox((Vector2)transform.position + rightOffset, rightBoxSize, 0f, groundLayer);
+        //isLeftWall = Physics2D.OverlapBox((Vector2)transform.position + leftOffset, leftBoxSize, 0f, groundLayer);
+        //isRightWall = Physics2D.OverlapBox((Vector2)transform.position + rightOffset, rightBoxSize, 0f, groundLayer);
         isRope= Physics2D.OverlapBox((Vector2)transform.position + Offset, BoxSize, 0f, ropeLayer);
 
         isAir = Physics2D.OverlapBox((Vector2)transform.position + Offset, BoxSize, 0f, AirLayer);

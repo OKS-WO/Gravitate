@@ -8,6 +8,9 @@ TagManager:
   - Rock
   - Water
   - Air
+  - Fire
+  - UnBreakable
+  - Mud
   layers:
   - Default
   - TransparentFX
@@ -23,7 +26,7 @@ TagManager:
   - Rock
   - Water
   - Air
-  - 
+  - Fire
   - 
   - 
   - 

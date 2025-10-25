@@ -7,6 +7,7 @@ public class ElementController : MonoBehaviour
     public GameObject RockPrefab;
     public GameObject WaterPrefab;
     public GameObject AirPrefab;
+    public GameObject FirePrefab;
     public GameObject PreviewPrefab;
     
 
@@ -18,11 +19,12 @@ public class ElementController : MonoBehaviour
 
     // 격자 이동 단위
     public float gridUnit = 1f;
+    private float currentAngle = 0f;
 
     void Update()
     {
         // 1. Q 키를 누르는 순간 (배치 모드 시작)
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.R))
         {
             if (!isSetting)
             {
@@ -36,6 +38,7 @@ public class ElementController : MonoBehaviour
         {
             // ?? 키보드 입력에 따른 오프셋 업데이트
             HandlePlacementInput();
+            HandleRotationInput();
 
             // 현재 위치 계산: 스크립트 위치 + 오프셋
             Vector3 targetPosition = (Vector2)transform.position + currentOffset;
@@ -49,15 +52,20 @@ public class ElementController : MonoBehaviour
             // 3. Q 키를 떼는 순간 (오브젝트 생성)
             if (Input.GetKeyUp(KeyCode.Q))
             {
-                FinalizePlacementR(targetPosition);
+                FinalizePlacementRock(targetPosition);
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
-                FinalizePlacementW(targetPosition);
+                FinalizePlacementWater(targetPosition);
             }
             if (Input.GetKeyUp(KeyCode.E))
             {
-                FinalizePlacementE(targetPosition);
+
+                FinalizePlacementAir(targetPosition);
+            }
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                FinalizePlacementFire(targetPosition);
             }
         }
     }
@@ -98,10 +106,36 @@ public class ElementController : MonoBehaviour
         {
             currentOffset.y += yInput * gridUnit;
         }
+       
+    }
+
+    private void HandleRotationInput()
+    {
+        // GetAxisRaw를 사용하면 키가 눌렸을 때만 1, -1, 0 값을 얻을 수 있습니다.
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float yInput = Input.GetAxisRaw("Vertical");
+
+        // 방향에 따라 각도를 결정합니다.
+        if (yInput < 0) // 위쪽 (W 또는 위 화살표)
+        {
+            currentAngle = 90f;
+        }
+        else if (yInput > 0) // 아래쪽 (S 또는 아래 화살표)
+        {
+            currentAngle = -90f; // 또는 270f
+        }
+        else if (xInput > 0) // 오른쪽 (D 또는 오른쪽 화살표)
+        {
+            currentAngle = 0f;
+        }
+        else if (xInput < 0) // 왼쪽 (A 또는 왼쪽 화살표)
+        {
+            currentAngle = 180f;
+        }
     }
 
     // ?? 최종 배치 및 정리 함수
-    private void FinalizePlacementR(Vector3 finalPosition)
+    private void FinalizePlacementRock(Vector3 finalPosition)
     {
         if (RockPrefab != null)
         {
@@ -118,9 +152,9 @@ public class ElementController : MonoBehaviour
         isSetting = false;
     }
 
-    private void FinalizePlacementW(Vector3 finalPosition)
+    private void FinalizePlacementWater(Vector3 finalPosition)
     {
-        if (RockPrefab != null)
+        if (WaterPrefab != null)
         {
             Instantiate(WaterPrefab, finalPosition, Quaternion.identity);
         }
@@ -135,11 +169,11 @@ public class ElementController : MonoBehaviour
         isSetting = false;
     }
 
-    private void FinalizePlacementE(Vector3 finalPosition)
+    private void FinalizePlacementAir(Vector3 finalPosition)
     {
-        if (RockPrefab != null)
+        if (AirPrefab != null)
         {
-            Instantiate(AirPrefab, finalPosition, Quaternion.identity);
+            Instantiate(AirPrefab, finalPosition, Quaternion.Euler(currentAngle, 90f, 90f));
         }
 
         if (currentPreview != null)
@@ -151,4 +185,23 @@ public class ElementController : MonoBehaviour
 
         isSetting = false;
     }
+
+    private void FinalizePlacementFire(Vector3 finalPosition)
+    {
+        if (FirePrefab != null)
+        {
+            Instantiate(FirePrefab, finalPosition, Quaternion.identity);
+        }
+
+        if (currentPreview != null)
+        {
+            // 다음 사용을 위해 미리보기 비활성화 및 정리
+            Destroy(currentPreview);
+            currentPreview = null;
+        }
+
+        isSetting = false;
+    }
+
+    
 }
