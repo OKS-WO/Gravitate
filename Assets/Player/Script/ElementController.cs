@@ -156,7 +156,7 @@ public class ElementController : MonoBehaviour
     {
         if (WaterPrefab != null)
         {
-            Instantiate(WaterPrefab, finalPosition, Quaternion.identity);
+            Instantiate(WaterPrefab, finalPosition, Quaternion.Euler(90f, 0f, 0f));
         }
 
         if (currentPreview != null)
@@ -190,7 +190,7 @@ public class ElementController : MonoBehaviour
     {
         if (FirePrefab != null)
         {
-            Instantiate(FirePrefab, finalPosition, Quaternion.identity);
+            Instantiate(FirePrefab, finalPosition, Quaternion.Euler(-90f, 0f, 0f));
         }
 
         if (currentPreview != null)
