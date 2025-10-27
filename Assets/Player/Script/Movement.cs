@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
 
 		if (coll.isAir && coll.dashReady)
 		{
-            StartCoroutine(dash());
+            //StartCoroutine(dash());
         }
     }
 

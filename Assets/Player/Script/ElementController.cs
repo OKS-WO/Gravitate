@@ -118,19 +118,19 @@ public class ElementController : MonoBehaviour
         // 방향에 따라 각도를 결정합니다.
         if (yInput < 0) // 위쪽 (W 또는 위 화살표)
         {
-            currentAngle = 90f;
+            currentAngle = 180f;
         }
         else if (yInput > 0) // 아래쪽 (S 또는 아래 화살표)
         {
-            currentAngle = -90f; // 또는 270f
+            currentAngle = 0f; // 또는 270f
         }
         else if (xInput > 0) // 오른쪽 (D 또는 오른쪽 화살표)
         {
-            currentAngle = 0f;
+            currentAngle = 270f;
         }
         else if (xInput < 0) // 왼쪽 (A 또는 왼쪽 화살표)
         {
-            currentAngle = 180f;
+            currentAngle = 90f;
         }
     }
 
@@ -173,7 +173,7 @@ public class ElementController : MonoBehaviour
     {
         if (AirPrefab != null)
         {
-            Instantiate(AirPrefab, finalPosition, Quaternion.Euler(currentAngle, 90f, 90f));
+            Instantiate(AirPrefab, finalPosition, Quaternion.Euler(0f, 0f, currentAngle));
         }
 
         if (currentPreview != null)
@@ -190,7 +190,7 @@ public class ElementController : MonoBehaviour
     {
         if (FirePrefab != null)
         {
-            Instantiate(FirePrefab, finalPosition, Quaternion.Euler(-90f, 0f, 0f));
+            Instantiate(FirePrefab, finalPosition, Quaternion.identity);
         }
 
         if (currentPreview != null)

@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - UnBreakable
   - Mud
+  - Steam
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Water
   - Air
   - Fire
-  - 
+  - Steam
   - 
   - 
   - 

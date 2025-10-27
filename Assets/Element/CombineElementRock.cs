@@ -10,7 +10,6 @@ public class CombineElement : MonoBehaviour
 		
 		if (gameObject.CompareTag("Rock"))
 		{
-			Debug.Log(other.tag);
 			if (other.CompareTag("Fire"))
 			{
 				gameObject.tag = "UnBreakable";
