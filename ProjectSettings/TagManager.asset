@@ -12,6 +12,8 @@ TagManager:
   - UnBreakable
   - Mud
   - Steam
+  - Spike
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
@@ -29,8 +31,8 @@ TagManager:
   - Air
   - Fire
   - Steam
-  - 
-  - 
+  - Spike
+  - CheckPoint
   - 
   - 
   - 
