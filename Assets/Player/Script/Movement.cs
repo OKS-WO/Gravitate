@@ -41,7 +41,12 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            jump();
+            if(!coll.isRope)
+                jump();
+            else if (coll.isRope == true && !coll.isGround)
+            {
+                StartCoroutine(wallJump(xInput));
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.X) && coll.dashReady && !coll.isGround)
@@ -122,7 +127,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    IEnumerator wallJump(int dir)
+    IEnumerator wallJump(float dir)
     {
         isWallJumping = true;
         rigid.velocity = new Vector2(dir * speed * 0.8f, jumpSpeed);

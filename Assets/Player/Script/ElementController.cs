@@ -21,6 +21,10 @@ public class ElementController : MonoBehaviour
     public float gridUnit = 1f;
     private float currentAngle = 0f;
 
+    public bool soil = false;
+    public bool water = false;
+    public bool air = false;
+    public bool fire = false;
     void Update()
     {
         // 1. Q 키를 누르는 순간 (배치 모드 시작)
