@@ -173,7 +173,7 @@ public class ElementController : MonoBehaviour
     {
         if (AirPrefab != null)
         {
-            Instantiate(AirPrefab, finalPosition, Quaternion.Euler(0f, 0f, currentAngle));
+            Instantiate(AirPrefab, finalPosition, Quaternion.identity);
         }
 
         if (currentPreview != null)

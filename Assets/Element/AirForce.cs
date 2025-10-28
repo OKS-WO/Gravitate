@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class AirForce : MonoBehaviour
 {
-    public float windStrength = 5f;          
+    public float force = 10f;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(other.tag);
-        ParticleSystem ps = other.GetComponent<ParticleSystem>();
-        if (ps != null)
-        {
-            var externalForces = ps.externalForces;
-            externalForces.enabled = true;
-            externalForces.multiplier = windStrength;
-            externalForces.multiplier = windStrength;
-            Debug.Log("파티클 시스템에 바람 효과 적용됨: " + other.name);
-        }
-    }
+        Debug.Log(collision.tag);
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        ParticleSystem ps = other.GetComponent<ParticleSystem>();
-        if (ps != null)
-        {
+        Vector2 vec = new Vector2(gameObject.transform.position.x - collision.transform.position.x, gameObject.transform.position.y - collision.transform.position.y);
+        vec = vec.normalized;
 
-            var externalForces = ps.externalForces;
-            externalForces.enabled = false;
+        vec *= -force;
+
+        Rigidbody2D rigid = collision.GetComponent<Rigidbody2D>();
+        if (rigid != null)
+        {
+            rigid.AddForce(vec);
         }
     }
 }
