@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && coll.dashReady && !coll.isGround)
         {
-            StartCoroutine(dash());
+            //StartCoroutine(dash());
         }
 
         xInput = Input.GetAxisRaw("Horizontal");
@@ -78,7 +78,7 @@ public class Movement : MonoBehaviour
         {
             move();
         }
-        if (!coll.isGround && (coll.isLeftWall || coll.isRightWall))
+        if (!coll.isGround && coll.isRope)
         {
             isClimbing = true;
             climbing();

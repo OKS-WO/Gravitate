@@ -2842,11 +2842,15 @@ MonoBehaviour:
   ropeLayer:
     serializedVersion: 2
     m_Bits: 1
+  AirLayer:
+    serializedVersion: 2
+    m_Bits: 5
   isGround: 0
   isLeftWall: 0
   isRightWall: 0
   dashReady: 0
   isRope: 0
+  isAir: 0
   bottomOffset: {x: 0, y: -0.5}
   groundBoxSize: {x: 0.8, y: 0.2}
   leftOffset: {x: -0.5, y: 0}
