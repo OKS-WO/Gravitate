@@ -21,14 +21,13 @@ public class ElementController : MonoBehaviour
     public float gridUnit = 1f;
     private float currentAngle = 0f;
 
-    public bool soil = false;
     public bool water = false;
     public bool air = false;
     public bool fire = false;
     void Update()
     {
         // 1. Q 키를 누르는 순간 (배치 모드 시작)
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (!isSetting)
             {
@@ -36,7 +35,30 @@ public class ElementController : MonoBehaviour
                 InitializePreview();
             }
         }
-
+        if (Input.GetKeyDown(KeyCode.W) && water)
+        {
+            if (!isSetting)
+            {
+                isSetting = true;
+                InitializePreview();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E) && air)
+        {
+            if (!isSetting)
+            {
+                isSetting = true;
+                InitializePreview();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R) && fire)
+        {
+            if (!isSetting)
+            {
+                isSetting = true;
+                InitializePreview();
+            }
+        }
         // 2. 배치 모드 유지 (미리보기 이동 및 최종 생성)
         if (isSetting)
         {

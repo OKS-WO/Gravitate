@@ -6,6 +6,7 @@ public class PlayerRespawn : MonoBehaviour
 {
     public Vector2 respawnPoint;
     public float deathTime = 3.0f;
+    public GameObject deathParticle;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,6 +21,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike"))
         {
+            Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity, null);
             StartCoroutine(killTime());
         }
     }
