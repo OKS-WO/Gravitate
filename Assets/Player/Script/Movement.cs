@@ -93,7 +93,12 @@ public class Movement : MonoBehaviour
 
     void move()
     {
-        if (Mathf.Abs(rigid.velocity.x) < speed + 5f && !element.isSetting)
+        if (coll.isGround && !element.isSetting)
+        {
+            Vector2 desireVector = new Vector2(xInput * speed, rigid.velocity.y);
+            rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
+        }
+        else if (Mathf.Abs(rigid.velocity.x) < speed + 5f && !element.isSetting)
         {
             Vector2 desireVector = new Vector2(xInput * speed, rigid.velocity.y);
             rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
