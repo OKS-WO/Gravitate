@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class CameraSize : MonoBehaviour
 {
-    Camera cam;
+    public Camera mainCam;
+    public Camera subCam;
 
-    public float defaultZoom = 8.0f;
-    public float zoomOut = 15.0f;
-    public float zoomSpeed = 3.0f;
-    private float curZoom;
-    void Awake()
-    {
-        cam = GetComponent<Camera>();
-    }
+	private void Awake()
+	{
+		mainCam.enabled = true;
+		subCam.enabled = false;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            curZoom = zoomOut;
-        }
-        else
-        {
-            curZoom = defaultZoom;
-        }
-
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, curZoom, zoomSpeed * Time.deltaTime);
-    }
+	private void Update()
+	{
+		if (Input.GetKey(KeyCode.Space))
+		{
+			mainCam.enabled = false;
+			subCam.enabled = true;
+		}
+		if (Input.GetKeyUp(KeyCode.Space))
+		{
+			mainCam.enabled = true;
+			subCam.enabled = false;
+		}
+	}
 }
