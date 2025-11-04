@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TestMoveElement : MonoBehaviour
 {
     public GameObject element;
+	public string targetStage;
 	bool isStageEnd = false;
 	Rigidbody2D rigid;
 	private void Awake()
@@ -16,7 +17,8 @@ public class TestMoveElement : MonoBehaviour
 	{
 		if (isStageEnd)
 		{
-			rigid.velocity = Vector2.up * 1f;
+			if(element!=null)
+				rigid.velocity = Vector2.up * 1f;
 		}
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -26,12 +28,12 @@ public class TestMoveElement : MonoBehaviour
 			isStageEnd = true;
 		}
 
-		Invoke("moveto1_1stage", 3f);
+		Invoke("moveStage", 3f);
 		
 	}
 
-	void moveto1_1stage()
+	void moveStage()
 	{
-		SceneManager.LoadScene("1_1stage");
+		SceneManager.LoadScene(targetStage);
 	}
 }

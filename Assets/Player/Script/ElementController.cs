@@ -183,7 +183,7 @@ public class ElementController : MonoBehaviour
     {
         if (WaterPrefab != null)
         {
-            Instantiate(WaterPrefab, finalPosition, Quaternion.Euler(90f, 0f, 0f));
+            Instantiate(WaterPrefab, finalPosition, Quaternion.Euler(0f, 0f, 0f));
         }
 
         if (currentPreview != null)

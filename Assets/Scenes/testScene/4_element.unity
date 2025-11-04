@@ -516,9 +516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81697d582c121a4a9f36ada474f0991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultZoom: 8
-  zoomOut: 15
-  zoomSpeed: 3
+  mainCam: {fileID: 0}
+  subCam: {fileID: 0}
 --- !u!81 &408093055
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1832,12 +1831,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RockPrefab: {fileID: 6615286964311997499, guid: 9af9f0eb4acd104488f61cfc99efa5f7, type: 3}
-  WaterPrefab: {fileID: 51125067507364610, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+  WaterPrefab: {fileID: 6073248794105147159, guid: 4f1afe5c37979784d8e9cff2d1b63dcb, type: 3}
   AirPrefab: {fileID: 1663469832382196399, guid: 33c5d930d9bc5f843abad59ab751a4d4, type: 3}
   FirePrefab: {fileID: 6968914295643411495, guid: 8f7fd56da2c4f7b42ae0e3c7522955fd, type: 3}
   PreviewPrefab: {fileID: 2684019401459564811, guid: 36bec1f52c1a0b845876af43c39a5b07, type: 3}
   isSetting: 0
   gridUnit: 1
+  soil: 0
   water: 1
   air: 1
   fire: 1

@@ -30,11 +30,13 @@ public class ButtonTrigger : MonoBehaviour
 	{
         currentPos = rigid.position;
         desirePos = endPos;
-	}
+
+    }
 
 	private void OnCollisionExit2D(Collision2D collision)
 	{
         currentPos = rigid.position;
         desirePos = startPos;
+
     }
 }

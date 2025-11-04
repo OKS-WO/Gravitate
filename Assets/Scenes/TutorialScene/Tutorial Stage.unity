@@ -9281,6 +9281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 120068270}
+  targetStage: 1_1stage
 --- !u!1 &672654744
 GameObject:
   m_ObjectHideFlags: 0
