@@ -26,7 +26,7 @@ public class ButtonTrigger : MonoBehaviour
         rigid.MovePosition(newPos);
     }
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	private void OnCollisionStay2D(Collision2D collision)
 	{
         currentPos = rigid.position;
         desirePos = endPos;
