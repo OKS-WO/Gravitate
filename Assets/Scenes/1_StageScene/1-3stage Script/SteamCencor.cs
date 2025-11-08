@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonTrigger : MonoBehaviour
+public class SteamCencor : MonoBehaviour
 {
     public GameObject bridge;
 
@@ -10,8 +10,7 @@ public class ButtonTrigger : MonoBehaviour
     public Vector2 endPos;
     public Vector2 currentPos;
     public Vector2 desirePos;
-    public float desireTime = 0.1f;
-    public bool loop = true;
+    public float desireTime = 0.05f;
 
     Rigidbody2D rigid;
     // Start is called before the first frame update
@@ -27,19 +26,12 @@ public class ButtonTrigger : MonoBehaviour
         rigid.MovePosition(newPos);
     }
 
-	private void OnCollisionStay2D(Collision2D collision)
-	{
-        currentPos = rigid.position;
-        desirePos = endPos;
-
-    }
-
-	private void OnCollisionExit2D(Collision2D collision)
-	{
-        if (loop == true)
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("Steam"))
         {
             currentPos = rigid.position;
-            desirePos = startPos;
+            desirePos = endPos;
         }
     }
 }
