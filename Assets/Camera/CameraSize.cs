@@ -26,4 +26,5 @@ public class CameraSize : MonoBehaviour
 			subCam.enabled = false;
 		}
 	}
+
 }
