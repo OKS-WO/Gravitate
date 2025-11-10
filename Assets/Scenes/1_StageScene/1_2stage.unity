@@ -2551,6 +2551,7 @@ MonoBehaviour:
   currentPos: {x: 37, y: 27}
   desirePos: {x: 37, y: 27}
   desireTime: 0.1
+  loop: 1
 --- !u!1 &1108339835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,6 +2702,7 @@ MonoBehaviour:
   currentPos: {x: 62, y: 25.5}
   desirePos: {x: 62, y: 25.5}
   desireTime: 0.1
+  loop: 1
 --- !u!114 &1108339840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,6 +2721,7 @@ MonoBehaviour:
   currentPos: {x: 38, y: 22}
   desirePos: {x: 38, y: 22}
   desireTime: 0.1
+  loop: 1
 --- !u!1 &1128719137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,6 +2888,7 @@ MonoBehaviour:
   currentPos: {x: 56, y: 33}
   desirePos: {x: 56, y: 33}
   desireTime: 0.1
+  loop: 1
 --- !u!1001 &1484368817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11708,6 +11712,7 @@ MonoBehaviour:
   currentPos: {x: 28.5, y: 25.2}
   desirePos: {x: 28.5, y: 25.2}
   desireTime: 0.05
+  loop: 1
 --- !u!61 &1591298827
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12327,7 +12332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 788736
   ropeLayer:
     serializedVersion: 2
     m_Bits: 512

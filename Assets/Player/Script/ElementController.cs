@@ -11,13 +11,13 @@ public class ElementController : MonoBehaviour
     public GameObject PreviewPrefab;
     
 
-    // ?? »ý¼º À§Ä¡ ¿ÀÇÁ¼ÂÀ» Vector2·Î °ü¸® (X, Y¸¸ »ç¿ë)
-    private Vector2 currentOffset = new Vector2(0f, 1f); // ½ÃÀÛ À§Ä¡: ¿ÀºêÁ§Æ® ¹Ù·Î À§ 1f
+    // ?? ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Vector2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (X, Yï¿½ï¿½ ï¿½ï¿½ï¿½)
+    private Vector2 currentOffset = new Vector2(0f, 1f); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ù·ï¿½ ï¿½ï¿½ 1f
 
     private GameObject currentPreview;
     public bool isSetting = false;
 
-    // °ÝÀÚ ÀÌµ¿ ´ÜÀ§
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
     public float gridUnit = 1f;
     private float currentAngle = 0f;
 
@@ -27,7 +27,7 @@ public class ElementController : MonoBehaviour
     public bool fire = false;
     void Update()
     {
-        // 1. Q Å°¸¦ ´©¸£´Â ¼ø°£ (¹èÄ¡ ¸ðµå ½ÃÀÛ)
+        // 1. Q Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         if (Input.GetKeyDown(KeyCode.Q) && soil)
         {
             if (!isSetting)
@@ -60,23 +60,23 @@ public class ElementController : MonoBehaviour
                 InitializePreview();
             }
         }
-        // 2. ¹èÄ¡ ¸ðµå À¯Áö (¹Ì¸®º¸±â ÀÌµ¿ ¹× ÃÖÁ¾ »ý¼º)
+        // 2. ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         if (isSetting)
         {
-            // ?? Å°º¸µå ÀÔ·Â¿¡ µû¸¥ ¿ÀÇÁ¼Â ¾÷µ¥ÀÌÆ®
+            // ?? Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
             HandlePlacementInput();
             HandleRotationInput();
 
-            // ÇöÀç À§Ä¡ °è»ê: ½ºÅ©¸³Æ® À§Ä¡ + ¿ÀÇÁ¼Â
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½: ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½Ä¡ + ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             Vector3 targetPosition = (Vector2)transform.position + currentOffset;
 
-            // ¹Ì¸®º¸±â ¿ÀºêÁ§Æ® À§Ä¡ ¾÷µ¥ÀÌÆ®
+            // ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
             if (currentPreview != null)
             {
                 currentPreview.transform.position = targetPosition;
             }
 
-            // 3. Q Å°¸¦ ¶¼´Â ¼ø°£ (¿ÀºêÁ§Æ® »ý¼º)
+            // 3. Q Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½)
             if (Input.GetKeyUp(KeyCode.Q))
             {
                 FinalizePlacementRock(targetPosition);
@@ -98,20 +98,20 @@ public class ElementController : MonoBehaviour
     }
 
     // ---------------------------------------------
-    // ?? ¹Ì¸®º¸±â ¿ÀºêÁ§Æ® ÃÊ±âÈ­ ÇÔ¼ö
+    // ?? ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ê±ï¿½È­ ï¿½Ô¼ï¿½
     private void InitializePreview()
     {
-        // ÃÊ±â À§Ä¡¸¦ ¿ÀºêÁ§Æ® ¹Ù·Î À§ 1f·Î ¼³Á¤
+        // ï¿½Ê±ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ù·ï¿½ ï¿½ï¿½ 1fï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         currentOffset = new Vector2(0f, 1f);
 
         if (PreviewPrefab != null)
         {
-            // ±âÁ¸ ¹Ì¸®º¸±â°¡ ¾ø´Ù¸é »ý¼º
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (currentPreview == null)
             {
                 currentPreview = Instantiate(PreviewPrefab, Vector3.zero, Quaternion.identity);
             }
-            // ÀÌ¹Ì ÀÖ´Ù¸é È°¼ºÈ­¸¸
+            // ï¿½Ì¹ï¿½ ï¿½Ö´Ù¸ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½
             else
             {
                 currentPreview.SetActive(true);
@@ -119,49 +119,64 @@ public class ElementController : MonoBehaviour
         }
     }
 
-    // ?? Å°º¸µå ÀÔ·Â Ã³¸® ÇÔ¼ö (»óÇÏÁÂ¿ì ¿ÀÇÁ¼Â º¯°æ)
+    // ?? Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
     private void HandlePlacementInput()
     {
-        // »óÇÏÁÂ¿ì ÀÔ·Â È®ÀÎ
-        float xInput = Input.GetAxisRaw("Horizontal"); // A/D ¶Ç´Â ÁÂ¿ì È­»ìÇ¥
-        float yInput = Input.GetAxisRaw("Vertical");   // W/S ¶Ç´Â »óÇÏ È­»ìÇ¥
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½Ô·ï¿½ È®ï¿½ï¿½
+        // float xInput = Input.GetAxisRaw("Horizontal"); // A/D ï¿½Ç´ï¿½ ï¿½Â¿ï¿½ È­ï¿½ï¿½Ç¥
+        // float yInput = Input.GetAxisRaw("Vertical");   // W/S ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥
+        // if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        // {
+        //     currentOffset.x += xInput * gridUnit;
+        // }
+        // if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+        // {
+        //     currentOffset.y += yInput * gridUnit;
+        // }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            currentOffset.x += xInput * gridUnit;
+            currentOffset.x -= gridUnit;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            currentOffset.y += yInput * gridUnit;
+            currentOffset.x += gridUnit;
         }
-       
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            currentOffset.y += gridUnit;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            currentOffset.y -= gridUnit;
+        }
     }
 
     private void HandleRotationInput()
     {
-        // GetAxisRaw¸¦ »ç¿ëÇÏ¸é Å°°¡ ´­·ÈÀ» ¶§¸¸ 1, -1, 0 °ªÀ» ¾òÀ» ¼ö ÀÖ½À´Ï´Ù.
+        // GetAxisRawï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1, -1, 0 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
 
-        // ¹æÇâ¿¡ µû¶ó °¢µµ¸¦ °áÁ¤ÇÕ´Ï´Ù.
-        if (yInput < 0) // À§ÂÊ (W ¶Ç´Â À§ È­»ìÇ¥)
+        // ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+        if (yInput < 0) // ï¿½ï¿½ï¿½ï¿½ (W ï¿½Ç´ï¿½ ï¿½ï¿½ È­ï¿½ï¿½Ç¥)
         {
             currentAngle = 180f;
         }
-        else if (yInput > 0) // ¾Æ·¡ÂÊ (S ¶Ç´Â ¾Æ·¡ È­»ìÇ¥)
+        else if (yInput > 0) // ï¿½Æ·ï¿½ï¿½ï¿½ (S ï¿½Ç´ï¿½ ï¿½Æ·ï¿½ È­ï¿½ï¿½Ç¥)
         {
-            currentAngle = 0f; // ¶Ç´Â 270f
+            currentAngle = 0f; // ï¿½Ç´ï¿½ 270f
         }
-        else if (xInput > 0) // ¿À¸¥ÂÊ (D ¶Ç´Â ¿À¸¥ÂÊ È­»ìÇ¥)
+        else if (xInput > 0) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (D ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥)
         {
             currentAngle = 270f;
         }
-        else if (xInput < 0) // ¿ÞÂÊ (A ¶Ç´Â ¿ÞÂÊ È­»ìÇ¥)
+        else if (xInput < 0) // ï¿½ï¿½ï¿½ï¿½ (A ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥)
         {
             currentAngle = 90f;
         }
     }
 
-    // ?? ÃÖÁ¾ ¹èÄ¡ ¹× Á¤¸® ÇÔ¼ö
+    // ?? ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     private void FinalizePlacementRock(Vector3 finalPosition)
     {
         if (RockPrefab != null)
@@ -171,7 +186,7 @@ public class ElementController : MonoBehaviour
 
         if (currentPreview != null)
         {
-            // ´ÙÀ½ »ç¿ëÀ» À§ÇØ ¹Ì¸®º¸±â ºñÈ°¼ºÈ­ ¹× Á¤¸®
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Destroy(currentPreview);
             currentPreview = null;
         }
@@ -188,7 +203,7 @@ public class ElementController : MonoBehaviour
 
         if (currentPreview != null)
         {
-            // ´ÙÀ½ »ç¿ëÀ» À§ÇØ ¹Ì¸®º¸±â ºñÈ°¼ºÈ­ ¹× Á¤¸®
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Destroy(currentPreview);
             currentPreview = null;
         }
@@ -205,7 +220,7 @@ public class ElementController : MonoBehaviour
 
         if (currentPreview != null)
         {
-            // ´ÙÀ½ »ç¿ëÀ» À§ÇØ ¹Ì¸®º¸±â ºñÈ°¼ºÈ­ ¹× Á¤¸®
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Destroy(currentPreview);
             currentPreview = null;
         }
@@ -222,7 +237,7 @@ public class ElementController : MonoBehaviour
 
         if (currentPreview != null)
         {
-            // ´ÙÀ½ »ç¿ëÀ» À§ÇØ ¹Ì¸®º¸±â ºñÈ°¼ºÈ­ ¹× Á¤¸®
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             Destroy(currentPreview);
             currentPreview = null;
         }
