@@ -10841,7 +10841,7 @@ Transform:
   - {fileID: 377086659}
   - {fileID: 124761907}
   - {fileID: 1238423224}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1060082319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &749114688
 MonoBehaviour:
@@ -16678,6 +16678,7 @@ Transform:
   m_Children:
   - {fileID: 1371675080}
   - {fileID: 886766703}
+  - {fileID: 749114687}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1064084899
@@ -20942,9 +20943,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 320
-  m_RefResolutionY: 220
+  m_AssetsPPU: 26
+  m_RefResolutionX: 500
+  m_RefResolutionY: 400
   m_UpscaleRT: 1
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -68533,7 +68534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1069.42, y: -615.21}
+  m_AnchoredPosition: {x: -1076.32, y: -615.11}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698636446
@@ -72709,7 +72710,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1060082319}
-  - {fileID: 749114687}
   - {fileID: 285399577}
   - {fileID: 680731576}
   - {fileID: 802941573}
