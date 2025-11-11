@@ -7,8 +7,14 @@ public class PlayerRespawn : MonoBehaviour
     public Vector2 respawnPoint;
     public float deathTime = 3.0f;
     public GameObject deathParticle;
+    Movement movement;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+	private void Awake()
+	{
+        movement = GetComponent<Movement>();
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("CheckPoint"))
         {
@@ -21,6 +27,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike"))
         {
+            movement.playSound("DIE");
             Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity, null);
             StartCoroutine(killTime());
         }

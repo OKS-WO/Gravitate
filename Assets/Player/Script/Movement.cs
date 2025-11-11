@@ -23,8 +23,14 @@ public class Movement : MonoBehaviour
     public bool isSwing = false;
     public int numberOfGravityCore = 0;
 
+    public AudioClip jump_clip;
+    public AudioClip die_clip;
+    public AudioClip walk_clip;
+    public AudioClip jumpplatform_clip;
+
     // Start is called before the first frame update
 
+    AudioSource audioSource;
     private float xInput = 0f;
     private float yInput = 0f;
     void Start()
@@ -34,8 +40,10 @@ public class Movement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         hinJoint = GetComponent<HingeJoint2D>();
         element = GetComponent<ElementController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
+   
     // Update is called once per frame
     void Update()
     {
@@ -123,11 +131,13 @@ public class Movement : MonoBehaviour
         if (coll.isGround)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpSpeed);
+            playSound("JUMP");
         }
         else if (coll.isLeftWall || coll.isRightWall||(coll.isRope&&hinJoint.connectedBody!=null))
         {
             hinJoint.connectedBody = null;
             int dir = coll.isLeftWall ? 1 : -1;
+            playSound("JUMP");
             StartCoroutine(wallJump(dir));
         }
     }
@@ -136,6 +146,7 @@ public class Movement : MonoBehaviour
     {
         isWallJumping = true;
         rigid.velocity = new Vector2(dir * speed * 0.8f, jumpSpeed);
+        playSound("JUMP");
         yield return new WaitForSeconds(0.5f);
         isWallJumping = false;
     }
@@ -180,7 +191,27 @@ public class Movement : MonoBehaviour
         }
     }
 
-	private void OnTriggerStay2D(Collider2D collision)
+    public void playSound(string action)
+    {
+        switch (action)
+        {
+            case "JUMP":
+                audioSource.clip = jump_clip;
+                break;
+            case "DIE":
+                audioSource.clip = die_clip;
+                break;
+            case "WALK":
+                audioSource.clip = walk_clip;
+                break;
+            case "JUMPPLATFORM":
+                audioSource.clip = jumpplatform_clip;
+                break;
+        }
+        audioSource.Play();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Rope"))
 		{
