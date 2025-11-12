@@ -21,11 +21,16 @@ public class PlayerRespawn : MonoBehaviour
             respawnPoint = new Vector2(collision.transform.position.x, collision.transform.position.y);
         }
 
+        if (collision.CompareTag("DestructibleSpike"))
+        {
+            Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity, null);
+            StartCoroutine(killTime());
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("DestructibleSpike"))
         {
             movement.playSound("DIE");
             Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity, null);
