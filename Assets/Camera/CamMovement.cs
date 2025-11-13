@@ -13,5 +13,6 @@ public class CamMovement : MonoBehaviour
         if (target == null) return;
 
         transform.position = target.position + offset;
+        
     }
 }

@@ -11,6 +11,7 @@ public class ButtonTrigger : MonoBehaviour
     public Vector2 currentPos;
     public Vector2 desirePos;
     public float desireTime = 0.1f;
+    public bool loop = true;
 
     Rigidbody2D rigid;
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class ButtonTrigger : MonoBehaviour
         rigid.MovePosition(newPos);
     }
 
-	private void OnCollisionEnter2D(Collision2D collision)
+	private void OnCollisionStay2D(Collision2D collision)
 	{
         currentPos = rigid.position;
         desirePos = endPos;
@@ -35,8 +36,10 @@ public class ButtonTrigger : MonoBehaviour
 
 	private void OnCollisionExit2D(Collision2D collision)
 	{
-        currentPos = rigid.position;
-        desirePos = startPos;
-
+        if (loop == true)
+        {
+            currentPos = rigid.position;
+            desirePos = startPos;
+        }
     }
 }

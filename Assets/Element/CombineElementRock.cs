@@ -13,6 +13,7 @@ public class CombineElement : MonoBehaviour
 			if (other.CompareTag("Fire"))
 			{
 				gameObject.tag = "UnBreakable";
+				gameObject.layer = LayerMask.NameToLayer("Obsidian");
 				gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
 			}
 			else if (other.CompareTag("Water") && mudPrefab != null)
