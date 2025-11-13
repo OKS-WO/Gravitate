@@ -12,7 +12,8 @@ public class TestMoveElement : MonoBehaviour
 	Rigidbody2D rigid;
 	private void Awake()
 	{
-		rigid = element.GetComponent<Rigidbody2D>();
+		if(element!=null)
+			rigid = element.GetComponent<Rigidbody2D>();
 	}
 	private void Update()
 	{
