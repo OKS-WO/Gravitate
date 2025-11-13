@@ -28,6 +28,9 @@ public class Movement : MonoBehaviour
     public AudioClip walk_clip;
     public AudioClip jumpplatform_clip;
 
+    public AudioClip elementalSet_clip;
+
+
     // Start is called before the first frame update
 
     AudioSource audioSource;
@@ -113,7 +116,7 @@ public class Movement : MonoBehaviour
         }
 		if (element.isSetting)
 		{
-            Vector2 desireVector = new Vector2(0, 0);
+            Vector2 desireVector = new Vector2(0, rigid.velocity.y);
             rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
         }
         if (xInput == 1)
@@ -206,6 +209,9 @@ public class Movement : MonoBehaviour
                 break;
             case "JUMPPLATFORM":
                 audioSource.clip = jumpplatform_clip;
+                break;
+            case "SET":
+                audioSource.clip = elementalSet_clip;
                 break;
         }
         audioSource.Play();

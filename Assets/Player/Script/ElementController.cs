@@ -25,7 +25,15 @@ public class ElementController : MonoBehaviour
     public bool water = false;
     public bool air = false;
     public bool fire = false;
-    void Update()
+
+    Movement movement;
+
+	private void Awake()
+	{
+        movement = GetComponent<Movement>();
+	}
+
+	void Update()
     {
         // 1. Q Ű�� ������ ���� (��ġ ��� ����)
         if (Input.GetKeyDown(KeyCode.Q) && soil)
@@ -87,12 +95,11 @@ public class ElementController : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.E))
             {
-
-                FinalizePlacementAir(targetPosition);
+                FinalizePlacementFire(targetPosition);
             }
             if (Input.GetKeyUp(KeyCode.R))
             {
-                FinalizePlacementFire(targetPosition);
+                FinalizePlacementAir(targetPosition);
             }
         }
     }
@@ -181,6 +188,7 @@ public class ElementController : MonoBehaviour
     {
         if (RockPrefab != null)
         {
+            movement.playSound("SET");
             Instantiate(RockPrefab, finalPosition, Quaternion.identity);
         }
 
@@ -198,6 +206,7 @@ public class ElementController : MonoBehaviour
     {
         if (WaterPrefab != null)
         {
+            movement.playSound("SET");
             Instantiate(WaterPrefab, finalPosition, Quaternion.Euler(0f, 0f, 0f));
         }
 
@@ -215,6 +224,7 @@ public class ElementController : MonoBehaviour
     {
         if (AirPrefab != null)
         {
+            movement.playSound("SET");
             Instantiate(AirPrefab, finalPosition, Quaternion.identity);
         }
 
@@ -232,6 +242,7 @@ public class ElementController : MonoBehaviour
     {
         if (FirePrefab != null)
         {
+            movement.playSound("SET");
             Instantiate(FirePrefab, finalPosition, Quaternion.identity);
         }
 
