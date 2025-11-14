@@ -8,12 +8,18 @@ public class setUpCollider : MonoBehaviour
 
 	private void OnCollisionStay2D(Collision2D collision)
 	{
-		obj.tag = "Rope";
-		obj.layer = 9;
+		if (obj != null)
+		{
+			obj.tag = "Rope";
+			obj.layer = 9;
+		}
 	}
 	private void OnCollisionExit2D(Collision2D collision)
 	{
-		obj.tag = "Defalut";
-		obj.layer = 0;
+		if (obj != null)
+		{
+			obj.tag = "Defalut";
+			obj.layer = 0;
+		}
 	}
 }

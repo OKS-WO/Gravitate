@@ -9,10 +9,15 @@ public class JumpPlatfor : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
+
 		if (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Rock"))
 		{
 			Rigidbody2D rigid = collision.gameObject.GetComponent<Rigidbody2D>();
 			rigid.AddForce(direction * jumpForce, ForceMode2D.Impulse);
+			if (collision.gameObject.CompareTag("Player"))
+			{
+				collision.gameObject.GetComponent<Movement>().playSound("JUMPPLATFORM");
+			}
 		}
 	}
 }
