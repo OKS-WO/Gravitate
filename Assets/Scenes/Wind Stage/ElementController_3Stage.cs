@@ -37,8 +37,12 @@ public class ElementController_3Stage : MonoBehaviour
     public bool air = false;  
     public bool fire = false; 
 
+    Movement_3Stage movement;
+
     void Start()
     {
+        movement = GetComponent<Movement_3Stage>();
+
         uiManager = FindObjectOfType<UIManager>();
         if (uiManager == null)
         {
@@ -254,7 +258,11 @@ public class ElementController_3Stage : MonoBehaviour
     {
         if (currentGauge >= rockCost) 
         {
-            if (RockPrefab != null) Instantiate(RockPrefab, finalPosition, Quaternion.identity);
+            if (RockPrefab != null)
+            {
+                movement.playSound("SET");
+                Instantiate(RockPrefab, finalPosition, Quaternion.identity);
+            }
             currentGauge -= rockCost; 
         }
         CleanupAfterPlacement(true);
@@ -263,7 +271,11 @@ public class ElementController_3Stage : MonoBehaviour
     {
         if (currentGauge >= waterCost)
         {
-            if (WaterPrefab != null) Instantiate(WaterPrefab, finalPosition, Quaternion.Euler(0f, 0f, 0f));
+            if (WaterPrefab != null) 
+            {
+                movement.playSound("SET");
+                Instantiate(WaterPrefab, finalPosition, Quaternion.Euler(0f, 0f, 0f));
+            }
             currentGauge -= waterCost;
         }
         CleanupAfterPlacement(true);
@@ -272,7 +284,11 @@ public class ElementController_3Stage : MonoBehaviour
     {
         if (currentGauge >= airCost)
         {
-            if (AirPrefab != null) Instantiate(AirPrefab, finalPosition, Quaternion.identity);
+            if (AirPrefab != null) 
+            {
+                movement.playSound("SET");
+                Instantiate(AirPrefab, finalPosition, Quaternion.identity);
+            }
             currentGauge -= airCost;
         }
         CleanupAfterPlacement(true);
@@ -281,7 +297,11 @@ public class ElementController_3Stage : MonoBehaviour
     {
         if (currentGauge >= fireCost)
         {
-            if (FirePrefab != null) Instantiate(FirePrefab, finalPosition, Quaternion.identity);
+            if (FirePrefab != null) 
+            {
+                movement.playSound("SET");
+                Instantiate(FirePrefab, finalPosition, Quaternion.identity);
+            }
             currentGauge -= fireCost;
         }
         CleanupAfterPlacement(true);

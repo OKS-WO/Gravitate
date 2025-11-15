@@ -7,7 +7,7 @@ public class Movement_3Stage : MonoBehaviour
     Rigidbody2D rigid;
     Collision coll;
     SpriteRenderer spriteRenderer;
-    ElementController_3Stage element;
+    ElementController_3Stage element; 
 
     HingeJoint2D hinJoint;
     Rigidbody2D nearRopeRigid;
@@ -23,7 +23,13 @@ public class Movement_3Stage : MonoBehaviour
     public bool isSwing = false;
     public int numberOfGravityCore = 0;
 
-    // Start is called before the first frame update
+    public AudioClip jump_clip;
+    public AudioClip die_clip;
+    public AudioClip walk_clip;
+    public AudioClip jumpplatform_clip;
+    public AudioClip elementalSet_clip;
+
+    AudioSource audioSource;
 
     private float xInput = 0f;
     private float yInput = 0f;
@@ -34,9 +40,11 @@ public class Movement_3Stage : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         hinJoint = GetComponent<HingeJoint2D>();
         element = GetComponent<ElementController_3Stage>();
+
+        // AudioSource 컴포넌트 찾기
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -51,7 +59,6 @@ public class Movement_3Stage : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && coll.dashReady && !coll.isGround)
         {
-            //StartCoroutine(dash());
         }
 
         xInput = Input.GetAxisRaw("Horizontal");
@@ -73,8 +80,7 @@ public class Movement_3Stage : MonoBehaviour
 
 		if (coll.isAir && coll.dashReady)
 		{
-            //StartCoroutine(dash());
-        }
+		}
     }
 
 	private void FixedUpdate()
@@ -123,11 +129,13 @@ public class Movement_3Stage : MonoBehaviour
         if (coll.isGround)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, jumpSpeed);
+            playSound("JUMP");
         }
         else if (coll.isLeftWall || coll.isRightWall||(coll.isRope&&hinJoint.connectedBody!=null))
         {
             hinJoint.connectedBody = null;
             int dir = coll.isLeftWall ? 1 : -1;
+            playSound("JUMP");
             StartCoroutine(wallJump(dir));
         }
     }
@@ -136,6 +144,7 @@ public class Movement_3Stage : MonoBehaviour
     {
         isWallJumping = true;
         rigid.velocity = new Vector2(dir * speed * 0.8f, jumpSpeed);
+        playSound("JUMP");
         yield return new WaitForSeconds(0.5f);
         isWallJumping = false;
     }
@@ -180,12 +189,38 @@ public class Movement_3Stage : MonoBehaviour
         }
     }
 
+    // playSound 함수 추가
+    public void playSound(string action)
+    {
+        switch (action)
+        {
+            case "JUMP":
+                audioSource.clip = jump_clip;
+                break;
+            case "DIE":
+                audioSource.clip = die_clip;
+                break;
+            case "WALK":
+                audioSource.clip = walk_clip;
+                break;
+            case "JUMPPLATFORM":
+                audioSource.clip = jumpplatform_clip;
+                break;
+            case "SET":
+                audioSource.clip = elementalSet_clip;
+                break;
+        }
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+    }
+
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Rope"))
 		{
             nearRopeRigid = collision.gameObject.GetComponent<Rigidbody2D>();
-        }
-
+		}
 	}
 }

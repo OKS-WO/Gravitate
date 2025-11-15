@@ -8,12 +8,17 @@ public class PlayerRespawn_3Stage : MonoBehaviour
     public float deathTime = 3.0f;
     public GameObject deathParticle;
     private ElementController_3Stage elementController;
+    Movement_3Stage movement;
 
     private GameObject lastActivatedCheckpoint = null;
+
+
 
     void Start()
     {
         elementController = GetComponent<ElementController_3Stage>();
+        movement = GetComponent<Movement_3Stage>();
+
 
         if (elementController == null)
         {
@@ -52,6 +57,7 @@ public class PlayerRespawn_3Stage : MonoBehaviour
 
         if (collision.CompareTag("DestructibleSpike"))
         {
+            movement.playSound("DIE");
             Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity, null);
             StartCoroutine(killTime());
         }
@@ -61,6 +67,7 @@ public class PlayerRespawn_3Stage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("DestructibleSpike"))
         {
+            movement.playSound("DIE");
             Instantiate(deathParticle, gameObject.transform.position, Quaternion.identity, null);
             StartCoroutine(killTime());
         }
