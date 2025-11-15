@@ -16,11 +16,11 @@ public class UIAblitySlot : MonoBehaviour
 
     private bool isUnlocked = false; // 현재 해금 상태
 
-    void Start()
-    {
-        // 시작 시 초기 상태 (잠금)로 설정
-        SetState(false, null); 
-    }
+    // void Start()
+    // {
+    //     // 시작 시 초기 상태 (잠금)로 설정
+    //     SetState(false, null); 
+    // }
 
     // UIManager가 호출할 함수
     public void SetState(bool unlocked, Sprite elementIcon)
@@ -34,12 +34,10 @@ public class UIAblitySlot : MonoBehaviour
             iconImage.gameObject.SetActive(true);     // 원소 아이콘 보이기
             lockedImage.gameObject.SetActive(false);  // 잠금 슬롯 숨기기
             
-            // --- ▼ [NEW] 키 라벨 그룹 보이기 ▼ ---
             if (keyLabelGroup != null)
             {
                 keyLabelGroup.SetActive(true);
             }
-            // --- ▲ ---
 
             iconImage.sprite = elementIcon; // 원소 아이콘 이미지 변경
         }
@@ -50,12 +48,10 @@ public class UIAblitySlot : MonoBehaviour
             iconImage.gameObject.SetActive(false);     // 원소 아이콘 숨기기
             lockedImage.gameObject.SetActive(true);    // 잠금 슬롯 보이기
             
-            // --- ▼ [NEW] 키 라벨 그룹 숨기기 ▼ ---
             if (keyLabelGroup != null)
             {
                 keyLabelGroup.SetActive(false);
             }
-            // --- ▲ ---
         }
     }
 
