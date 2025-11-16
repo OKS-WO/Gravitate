@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 79ccdb0e758109c4b8376bf444b216a3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gaugeFullSprite: {fileID: 21300000, guid: a3fbe12a5b9eb5541b1d2370af23edf0, type: 3}
+  - gaugeEmptySprite: {fileID: 21300000, guid: 0c72177f3d655604c92888429511fe77, type: 3}
+  - slotQ_Icon: {instanceID: 0}
+  - slotW_Icon: {instanceID: 0}
+  - slotE_Icon: {instanceID: 0}
+  - slotR_Icon: {instanceID: 0}
+  - icon_Locked: {fileID: 21300000, guid: b077818db7df77e4db729d473295e99e, type: 3}
+  - icon_Soil: {instanceID: 0}
+  - icon_Water: {instanceID: 0}
+  - icon_Fire: {instanceID: 0}
+  - icon_Air: {instanceID: 0}
+  - q_Highlight: {instanceID: 0}
+  - w_Highlight: {instanceID: 0}
+  - e_Highlight: {instanceID: 0}
+  - r_Highlight: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
