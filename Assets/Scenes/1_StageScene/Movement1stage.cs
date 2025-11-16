@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement_3Stage : MonoBehaviour
+public class Movement1stage : MonoBehaviour
 {
     Rigidbody2D rigid;
     Collision coll;
     SpriteRenderer spriteRenderer;
-    ElementController_3Stage element; 
+    ElementController_3Stage element;
 
     HingeJoint2D hinJoint;
     Rigidbody2D nearRopeRigid;
@@ -41,7 +41,7 @@ public class Movement_3Stage : MonoBehaviour
         hinJoint = GetComponent<HingeJoint2D>();
         element = GetComponent<ElementController_3Stage>();
 
-        // AudioSource Ïª¥Ìè¨ÎÑåÌä∏ Ï∞æÍ∏∞
+        // AudioSource ƒƒ∆˜≥Õ∆Æ √£±‚
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -49,7 +49,7 @@ public class Movement_3Stage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if(!coll.isRope)
+            if (!coll.isRope)
                 jump();
             else if (coll.isRope == true && !coll.isGround)
             {
@@ -64,7 +64,7 @@ public class Movement_3Stage : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(KeyCode.C) && coll.isRope && !isWallJumping) 
+        if (Input.GetKey(KeyCode.C) && coll.isRope && !isWallJumping)
         {
             if (hinJoint.connectedBody == null)
             {
@@ -78,12 +78,12 @@ public class Movement_3Stage : MonoBehaviour
             hinJoint.enabled = false;
         }
 
-		if (coll.isAir && coll.dashReady)
-		{
-		}
+        if (coll.isAir && coll.dashReady)
+        {
+        }
     }
 
-	private void FixedUpdate()
+    private void FixedUpdate()
     {
         if (isDashing == false)
         {
@@ -109,8 +109,8 @@ public class Movement_3Stage : MonoBehaviour
             Vector2 desireVector = new Vector2(xInput * speed, rigid.velocity.y);
             rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
         }
-		if (element.isSetting)
-		{
+        if (element.isSetting)
+        {
             Vector2 desireVector = new Vector2(0, 0);
             rigid.velocity = Vector2.Lerp(rigid.velocity, desireVector, 10.0f * Time.deltaTime);
         }
@@ -131,7 +131,7 @@ public class Movement_3Stage : MonoBehaviour
             rigid.velocity = new Vector2(rigid.velocity.x, jumpSpeed);
             playSound("JUMP");
         }
-        else if (coll.isLeftWall || coll.isRightWall||(coll.isRope&&hinJoint.connectedBody!=null))
+        else if (coll.isLeftWall || coll.isRightWall || (coll.isRope && hinJoint.connectedBody != null))
         {
             hinJoint.connectedBody = null;
             int dir = coll.isLeftWall ? 1 : -1;
@@ -160,13 +160,13 @@ public class Movement_3Stage : MonoBehaviour
 
         if (x * y != 0) dashRate = 0.85f;
         if (x == 0 && y == 0) y = 1f;
-        
+
         rigid.velocity = new Vector2(x * dashSpeed * dashRate, y * dashSpeed * dashRate);
         yield return new WaitForSeconds(0.1f);
         while (rigid.velocity.magnitude > 0.3f)
         {
             rigid.velocity = Vector2.Lerp(rigid.velocity, Vector2.zero, 10f * Time.deltaTime);
-            yield return null; 
+            yield return null;
         }
         isDashing = false;
         rigid.velocity = Vector2.zero;
@@ -189,7 +189,7 @@ public class Movement_3Stage : MonoBehaviour
         }
     }
 
-    // playSound Ìï®Ïàò Ï∂îÍ∞Ä
+    // playSound «‘ºˆ √ﬂ∞°
     public void playSound(string action)
     {
         switch (action)
@@ -216,11 +216,11 @@ public class Movement_3Stage : MonoBehaviour
         }
     }
 
-	private void OnTriggerStay2D(Collider2D collision)
-	{
-		if (collision.CompareTag("Rope"))
-		{
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Rope"))
+        {
             nearRopeRigid = collision.gameObject.GetComponent<Rigidbody2D>();
-		}
-	}
+        }
+    }
 }
