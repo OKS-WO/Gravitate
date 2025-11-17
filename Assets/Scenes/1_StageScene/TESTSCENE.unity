@@ -82762,10 +82762,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d3bdced5b206a4daf37d14774d472c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RockPrefab: {fileID: 6615286964311997499, guid: 9af9f0eb4acd104488f61cfc99efa5f7, type: 3}
-  WaterPrefab: {fileID: 5783165794192288479, guid: 1c78df4c9cd912b4b9a3f28bd304082b, type: 3}
-  AirPrefab: {fileID: 910423728363645432, guid: 64cf931e1dc89654e8ec82075405cc9b, type: 3}
-  FirePrefab: {fileID: 61379250084563207, guid: e97a54262108dc341b3f7fcf1dc533d6, type: 3}
+  RockPrefab: {fileID: 8084886991976540390, guid: 5fbdbd0af71a79b4aafad9f5aadea374, type: 3}
+  WaterPrefab: {fileID: 230014425116531187, guid: 92cdcf2b1af66844ab2260fbbeec8306, type: 3}
+  AirPrefab: {fileID: 1353103164959901581, guid: 5fef0224cd654274ab2ef629c9515813, type: 3}
+  FirePrefab: {fileID: 3108588231119021829, guid: 3eb74115039728e49a3e043f2dd897e3, type: 3}
   PreviewPrefab: {fileID: 2684019401459564811, guid: 36bec1f52c1a0b845876af43c39a5b07, type: 3}
   isSetting: 0
   gridUnit: 1

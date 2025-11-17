@@ -126403,6 +126403,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3468769675969365687, guid: 8f7fd56da2c4f7b42ae0e3c7522955fd, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468769675969365687, guid: 8f7fd56da2c4f7b42ae0e3c7522955fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6968914295643411495, guid: 8f7fd56da2c4f7b42ae0e3c7522955fd, type: 3}
       propertyPath: m_Name
       value: FirePrefab
@@ -152501,11 +152509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4448259373412492787, guid: 4f1afe5c37979784d8e9cff2d1b63dcb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.39
+      value: 83.9
       objectReference: {fileID: 0}
     - target: {fileID: 4448259373412492787, guid: 4f1afe5c37979784d8e9cff2d1b63dcb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.61
+      value: 12.69
       objectReference: {fileID: 0}
     - target: {fileID: 4448259373412492787, guid: 4f1afe5c37979784d8e9cff2d1b63dcb, type: 3}
       propertyPath: m_LocalPosition.z
