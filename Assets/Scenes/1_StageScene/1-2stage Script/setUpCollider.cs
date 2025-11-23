@@ -18,7 +18,7 @@ public class setUpCollider : MonoBehaviour
 	{
 		if (obj != null)
 		{
-			obj.tag = "Defalut";
+			obj.tag = "Untagged";
 			obj.layer = 0;
 		}
 	}
