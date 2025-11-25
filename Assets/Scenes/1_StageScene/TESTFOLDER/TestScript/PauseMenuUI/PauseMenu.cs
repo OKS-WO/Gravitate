@@ -46,12 +46,14 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        restartManager.setRespawn = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void CheckPoint()
     {
-        Debug.Log("to check point");
+        restartManager.respawnPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRespawn_3Stage>().respawnPoint;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Quit()

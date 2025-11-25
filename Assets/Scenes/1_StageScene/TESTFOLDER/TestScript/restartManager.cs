@@ -1,19 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class restartManager : MonoBehaviour
 {
-    public static Vector3 pos = Vector3.zero;
+    public static Vector3 respawnPoint;
+    public static bool setRespawn = false;
 
-    public static void toCheckPoint()
+    public static restartManager Instance;
+
+    public static CursorMode;
+    public enum ReMode
     {
-        if (pos != Vector3.zero)
+
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            pos = new Vector3(pos.x, pos.y, 0f);
-            player.transform.position = pos;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(this);
         }
     }
+
+
 }
