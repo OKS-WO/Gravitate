@@ -16,6 +16,7 @@ TagManager:
   - CheckPoint
   - Obsidian
   - DestructibleSpike
+  - Seesaw
   layers:
   - Default
   - TransparentFX

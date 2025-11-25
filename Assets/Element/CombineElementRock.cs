@@ -5,6 +5,7 @@ using UnityEngine;
 public class CombineElement : MonoBehaviour
 {
 	public GameObject mudPrefab;
+	public float obsidianMass = 20f;
 	private void OnParticleCollision(GameObject other)
 	{
 		
@@ -15,6 +16,16 @@ public class CombineElement : MonoBehaviour
 				gameObject.tag = "UnBreakable";
 				gameObject.layer = LayerMask.NameToLayer("Obsidian");
 				gameObject.GetComponent<SpriteRenderer>().color = new Color32(50, 50, 50, 255);
+
+                Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.mass = obsidianMass; 
+                }
+                else
+                {
+                    Debug.LogWarning("흑요석으로 변하는 오브젝트에 Rigidbody2D 컴포넌트가 없습니다!");
+                }
 				Debug.Log(gameObject.GetComponent<SpriteRenderer>().color);
 			}
 			else if (other.CompareTag("Water") && mudPrefab != null)

@@ -11,7 +11,7 @@ public class restartManager : MonoBehaviour
 
     public static restartManager Instance;
 
-    public static CursorMode;
+    public static CursorMode cursormode;
     public enum ReMode
     {
 

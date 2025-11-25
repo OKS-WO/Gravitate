@@ -112,7 +112,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &7879333239910238657
 BoxCollider2D:
@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mudPrefab: {fileID: 8659056278221175202, guid: c09bb25488cbb1e4fb61f08e953729f3, type: 3}
+  obsidianMass: 20
