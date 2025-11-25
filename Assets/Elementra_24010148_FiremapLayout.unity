@@ -1304,6 +1304,11 @@ MonoBehaviour:
   isWallJumping: 0
   isSwing: 0
   numberOfGravityCore: 0
+  jump_clip: {fileID: 0}
+  die_clip: {fileID: 0}
+  walk_clip: {fileID: 0}
+  jumpplatform_clip: {fileID: 0}
+  elementalSet_clip: {fileID: 0}
 --- !u!50 &379757328
 Rigidbody2D:
   serializedVersion: 4
