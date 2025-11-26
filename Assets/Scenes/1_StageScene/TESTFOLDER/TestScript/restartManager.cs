@@ -6,16 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class restartManager : MonoBehaviour
 {
-    public static Vector3 respawnPoint;
+    public static Vector2 respawnPoint;
     public static bool setRespawn = false;
 
-    public static restartManager Instance;
-
-    public static CursorMode;
-    public enum ReMode
-    {
-
-    }
+    public static restartManager Instance { get; private set; }
 
     private void Awake()
     {
