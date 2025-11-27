@@ -49,6 +49,11 @@ public class PlayerRespawn_3Stage : MonoBehaviour
 
             lastActivatedCheckpoint = collision.gameObject;
 
+            //체크포인트 재시작을 위한 추가 코드, 병합 문제 있을 시 삭제
+            restartManager.respawnPoint = collision.gameObject.transform.position;
+            restartManager.setRespawn = true;
+            Debug.Log(restartManager.respawnPoint);
+
             if (elementController != null)
             {
                 elementController.RestoreAllGauge();

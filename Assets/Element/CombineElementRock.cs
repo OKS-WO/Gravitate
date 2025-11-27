@@ -14,7 +14,8 @@ public class CombineElement : MonoBehaviour
 			{
 				gameObject.tag = "UnBreakable";
 				gameObject.layer = LayerMask.NameToLayer("Obsidian");
-				gameObject.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f);
+				gameObject.GetComponent<SpriteRenderer>().color = new Color32(50, 50, 50, 255);
+				Debug.Log(gameObject.GetComponent<SpriteRenderer>().color);
 			}
 			else if (other.CompareTag("Water") && mudPrefab != null)
 			{
