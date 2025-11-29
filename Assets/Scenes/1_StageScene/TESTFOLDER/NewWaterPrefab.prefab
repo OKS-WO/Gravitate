@@ -9858,6 +9858,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water_Particle
       objectReference: {fileID: 0}
+    - target: {fileID: 2514217809427349627, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514217809427349627, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514217809427349627, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514217809427349627, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514217809427349627, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: ExternalForcesModule.multiplierCurve.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258964033248924016, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258964033248924016, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258964033248924016, guid: a3ab349abcf796f428d19583706b984b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8634202302635544995, guid: a3ab349abcf796f428d19583706b984b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
