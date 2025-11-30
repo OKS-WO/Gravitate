@@ -60,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         Continue();
+        restartManager.setRespawn = false;
         SceneManager.LoadScene("TitleScene");
     }
 }
