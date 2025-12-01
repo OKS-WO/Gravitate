@@ -54,7 +54,7 @@ public class EvolvingIsland : MonoBehaviour
 
         if(isLaunched && spawnerActivated)
         {
-            if(transform.position.y >= 152) isLaunched = false;
+            if(transform.position.y >= 132) isLaunched = false;
         }
     }
 
