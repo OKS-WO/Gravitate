@@ -283,6 +283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  maxDistance: 15
+  maxDistance: 10
   waitTime: 0
   rotationSpeed: 360
