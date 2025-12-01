@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class fireball_prefab_script : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Rigidbody2D rigid2d;
+    //Collision coll2d;
+    private void Awake()
     {
-        
+        rigid2d = GetComponent<Rigidbody2D>();
     }
 
+    // Start is called before the first frame update
+    void Start() {}
+
     
-    public float movespeed = 0.012f;
+    public float movespeed = 0;
     public GameObject SteamEffectPreFab;
-    public GameObject FireEffectPreFab;
     public int SteamEffectcnt = 5;
     public int FireEffectcnt = 10;
+    public float limittime = 15.0f;
 
     // Update is called once per frame
     void Update()
     {
-       // Vector3 rotationValue = new Vector3(0, 0, 0.5f);
-        transform.Translate(Vector2.right * movespeed);
-       // transform.Rotate(rotationValue);
+        rigid2d.velocity = new Vector3(movespeed, 0, 0);
+        limittime -= Time.deltaTime;
+        if (limittime < 0) { Destroy(gameObject); } //prevents memory overload
     }
 
     
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("update:fireball has collisioned with particle");
         if (gameObject.CompareTag("Fire"))
         {
             if (other.CompareTag("Water") && SteamEffectPreFab != null)
@@ -54,7 +59,7 @@ public class fireball_prefab_script : MonoBehaviour
             if (collision.gameObject.CompareTag("UnBreakable"))
             {
                 Vector3 pos = gameObject.transform.position;
-                Instantiate(FireEffectPreFab, pos, Quaternion.Euler(-90f, 0f, 0f), null);
+                //Instantiate(FireEffectPreFab, pos, Quaternion.Euler(-90f, 0f, 0f), null);
                 Destroy(gameObject);
                 Debug.Log("fb + ub");
             }
