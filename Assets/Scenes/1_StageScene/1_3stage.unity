@@ -153650,7 +153650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1812461358029301087, guid: 4f1afe5c37979784d8e9cff2d1b63dcb, type: 3}
       propertyPath: m_MaxParticleSize
-      value: 0.005
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 1812461358029301087, guid: 4f1afe5c37979784d8e9cff2d1b63dcb, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -155213,6 +155213,7 @@ GameObject:
   - component: {fileID: 980409600}
   - component: {fileID: 980409599}
   - component: {fileID: 980409598}
+  - component: {fileID: 980409602}
   m_Layer: 0
   m_Name: ToNextStage
   m_TagString: Untagged
@@ -155347,6 +155348,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980409602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980409597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a258717ec4cbb1943865ec27b023846f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageNum: 4
 --- !u!1 &984341646
 GameObject:
   m_ObjectHideFlags: 0
@@ -156843,7 +156857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258964033248924016, guid: a3ab349abcf796f428d19583706b984b, type: 3}
       propertyPath: m_MaxParticleSize
-      value: 0.005
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 4258964033248924016, guid: a3ab349abcf796f428d19583706b984b, type: 3}
       propertyPath: m_Materials.Array.data[0]

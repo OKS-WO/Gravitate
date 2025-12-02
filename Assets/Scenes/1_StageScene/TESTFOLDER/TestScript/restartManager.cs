@@ -8,7 +8,7 @@ public class restartManager : MonoBehaviour
 {
     public static Vector2 respawnPoint;
     public static bool setRespawn = false;
-    public static int visitedStageNum = -1;
+    public static int visitedStageNum;
 
     public static restartManager Instance { get; private set; }
 
@@ -18,6 +18,7 @@ public class restartManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log(visitedStageNum);
         }
         else
         {

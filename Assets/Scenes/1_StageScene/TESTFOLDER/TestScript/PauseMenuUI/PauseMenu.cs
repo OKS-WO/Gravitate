@@ -60,7 +60,19 @@ public class PauseMenu : MonoBehaviour
     public void Quit()
     {
         Continue();
-        restartManager.setRespawn = false;
+        if (PlayerPrefs.HasKey("visitedStageNum"))
+        {
+            int n = PlayerPrefs.GetInt("visitedStageNum");
+            if (n < restartManager.visitedStageNum)
+            {
+                PlayerPrefs.SetInt("visitedStageNum", restartManager.visitedStageNum);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("visitedStageNum", restartManager.visitedStageNum);
+        }
+            restartManager.setRespawn = false;
         SceneManager.LoadScene("TitleScene");
     }
 }

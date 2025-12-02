@@ -12,11 +12,12 @@ public class continueMenu : MonoBehaviour
     private void Update()
     {
         int n = restartManager.visitedStageNum;
-        n = n <= stage.Length ? n : stage.Length;
-        for (int i = 0; i < n + 1; i++)
+        for(int i = 0; i < stage.Length; i++)
         {
-            stage[i].SetActive(true);
+            if (i < n) stage[i].SetActive(true);
+            else stage[i].SetActive(false);
         }
+        Debug.Log(n);
     }
 
     public void continueStage(string stageName)

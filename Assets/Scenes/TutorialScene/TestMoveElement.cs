@@ -28,10 +28,6 @@ public class TestMoveElement : MonoBehaviour
 		if (collision.gameObject.CompareTag("Player"))
 		{
 			isStageEnd = true;
-			int n = SceneManager.GetActiveScene().buildIndex;
-			if (n > restartManager.visitedStageNum)
-				restartManager.visitedStageNum = n;
-			Debug.Log(n);
 		}
 
 		Invoke("moveStage", nextStageTime);
