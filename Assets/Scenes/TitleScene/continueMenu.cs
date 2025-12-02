@@ -30,4 +30,25 @@ public class continueMenu : MonoBehaviour
         mainMenu.SetActive(true);
         conMenu.SetActive(false);
     }
+
+    public void continue3thStage(int num)
+    {
+        restartManager.setRespawn = true;
+        switch (num)
+        {
+            case 1:
+                restartManager.respawnPoint = new Vector2(0, 0);
+                break;
+
+            case 2:
+                restartManager.respawnPoint = new Vector2(0, 0);
+                break;
+
+            case 3:
+                restartManager.respawnPoint = new Vector2(0, 0);
+                break;
+
+            default:break;
+        }
+    }
 }
