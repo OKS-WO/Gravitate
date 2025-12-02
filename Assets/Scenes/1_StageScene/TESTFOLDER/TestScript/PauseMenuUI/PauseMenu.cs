@@ -72,7 +72,7 @@ public class PauseMenu : MonoBehaviour
         {
             PlayerPrefs.SetInt("visitedStageNum", restartManager.visitedStageNum);
         }
-            restartManager.setRespawn = false;
+        restartManager.setRespawn = false;
         SceneManager.LoadScene("TitleScene");
     }
 }
