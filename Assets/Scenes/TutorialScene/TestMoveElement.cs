@@ -7,7 +7,7 @@ public class TestMoveElement : MonoBehaviour
 {
     public GameObject element;
 	public string targetStage;
-	public float nextStageTime = 3.0f;
+	public float nextStageTime = 0.5f;
 	bool isStageEnd = false;
 	Rigidbody2D rigid;
 	private void Awake()
@@ -36,6 +36,7 @@ public class TestMoveElement : MonoBehaviour
 
 	void moveStage()
 	{
+		restartManager.setRespawn = false;
 		SceneManager.LoadScene(targetStage);
 	}
 }

@@ -46,18 +46,33 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        Continue();
         restartManager.setRespawn = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void CheckPoint()
     {
-        restartManager.respawnPoint = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRespawn_3Stage>().respawnPoint;
+        Continue();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Quit()
     {
+        Continue();
+        if (PlayerPrefs.HasKey("visitedStageNum"))
+        {
+            int n = PlayerPrefs.GetInt("visitedStageNum");
+            if (n < restartManager.visitedStageNum)
+            {
+                PlayerPrefs.SetInt("visitedStageNum", restartManager.visitedStageNum);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("visitedStageNum", restartManager.visitedStageNum);
+        }
+        restartManager.setRespawn = false;
         SceneManager.LoadScene("TitleScene");
     }
 }

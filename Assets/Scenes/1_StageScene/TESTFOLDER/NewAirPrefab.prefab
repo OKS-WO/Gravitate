@@ -35,6 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1038041134707593372}
   - {fileID: 4974544900650715972}
   - {fileID: 3223514687912763713}
   m_Father: {fileID: 0}
@@ -282,6 +283,112 @@ WindZone:
   m_WindTurbulence: 1
   m_WindPulseMagnitude: 0.5
   m_WindPulseFrequency: 0.01
+--- !u!1 &6437930046108032636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038041134707593372}
+  - component: {fileID: 1244925239568467458}
+  - component: {fileID: 7229835354185846101}
+  m_Layer: 0
+  m_Name: windAnim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038041134707593372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437930046108032636}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 713551078374952246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1244925239568467458
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437930046108032636}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2071983327, guid: 06a7c4aca56b9af42aee4106a3af91c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &7229835354185846101
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6437930046108032636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a07cd7cd49eaec438013a13c1f1e551, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5580663007479156470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -343,9 +450,181 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.ratio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.worldSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.textureMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.textureScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.textureScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.dieWithParticles
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.sizeAffectsWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.minVertexDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.sizeAffectsLifetime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.lifetime.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.widthOverTrail.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.g
+      value: 0.16883469
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 0.14010866
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.r
+      value: 0.013207495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.minColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.minColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.minColor.r
+      value: 0.092769146
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.ctime0
+      value: 17193
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.ctime1
+      value: 40786
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key0.g
+      value: 0.5710504
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key1.a
+      value: 0.0627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key1.g
+      value: 0.0265162
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.key1.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.lifetime.maxCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.lifetime.maxCurve.m_Curve.Array.data[1].time
+      value: 0.40841675
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.lifetime.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044726630811477807, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: TrailModule.lifetime.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871869554924122142, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8871869554924122142, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871869554924122142, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871869554924122142, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871869554924122142, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 9114542886542823519, guid: 3e9a05123e485344c89994e9411661ea, type: 3}
       propertyPath: killTime
       value: 100
