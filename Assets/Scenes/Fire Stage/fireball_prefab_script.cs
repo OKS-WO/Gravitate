@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class fireball_prefab_script : MonoBehaviour
 {
@@ -46,21 +47,25 @@ public class fireball_prefab_script : MonoBehaviour
         }
     }
 
+    public GameObject fireboom;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("update:fireball has collisioned with rigidbody");
         if (this.gameObject.CompareTag("Fire"))
         {
+            Vector3 pos = gameObject.transform.position;
             if (collision.gameObject.CompareTag("Player"))
             {
-                gameObject.tag = "Spike";
-                Debug.Log("fb + pl");
+                Debug.Log("fire + player");
+                Destroy(this.gameObject);
+                Instantiate(fireboom, pos, Quaternion.Euler(-90f, 0f, 0f), null);
+               
             }
             if (collision.gameObject.CompareTag("UnBreakable"))
             {
-                Vector3 pos = gameObject.transform.position;
-                //Instantiate(FireEffectPreFab, pos, Quaternion.Euler(-90f, 0f, 0f), null);
-                Destroy(gameObject);
+                Destroy(this.gameObject);
+                Instantiate(fireboom, pos, Quaternion.Euler(-90f, 0f, 0f), null);
                 Debug.Log("fb + ub");
             }
         }
