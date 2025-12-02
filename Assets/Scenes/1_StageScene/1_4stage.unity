@@ -108176,7 +108176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 1351795636}
-  targetStage: 1_1stage
+  targetStage: NewFire
   nextStageTime: 0.5
 --- !u!61 &1921041959
 BoxCollider2D:

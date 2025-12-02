@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScene/TitleScene.unity
     guid: 1339e2a3df3ae594a90722af41279c32
+  - enabled: 1
+    path: Assets/Scenes/Fire Stage/NewFire.unity
+    guid: 795409772a0659346a43c38d0698b21e
   m_configObjects: {}
