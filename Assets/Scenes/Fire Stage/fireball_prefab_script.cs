@@ -23,8 +23,7 @@ public class fireball_prefab_script : MonoBehaviour
     public float limittime = 15.0f;
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         rigid2d.velocity = new Vector3(movespeed, 0, 0);
         limittime -= Time.deltaTime;
         if (limittime < 0) { Destroy(gameObject); } //prevents memory overload
@@ -32,42 +31,34 @@ public class fireball_prefab_script : MonoBehaviour
 
     
 
-    private void OnParticleCollision(GameObject other)
-    {
+    private void OnParticleCollision(GameObject other) {
         Debug.Log("update:fireball has collisioned with particle");
-        if (gameObject.CompareTag("Fire"))
-        {
-            if (other.CompareTag("Water") && SteamEffectPreFab != null)
-            {
-                Vector3 pos = gameObject.transform.position;
-                for (int i=0;i<SteamEffectcnt; i++)
-                    Instantiate(SteamEffectPreFab, pos, Quaternion.Euler(-90f, 0f, 0f), null);
-                Destroy(gameObject);
-            }
+        if (other.CompareTag("Water") && SteamEffectPreFab != null)  {
+            Destroy(gameObject);
+            new WaitForEndOfFrame();
+            Vector3 pos = gameObject.transform.position;
+            for (int i = 0; i < SteamEffectcnt; i++)
+                Instantiate(SteamEffectPreFab, pos, Quaternion.Euler(-90f, 0f, 0f), null);
         }
     }
 
     public GameObject fireboom;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision)  {
         Debug.Log("update:fireball has collisioned with rigidbody");
-        if (this.gameObject.CompareTag("Fire"))
-        {
-            Vector3 pos = gameObject.transform.position;
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                Debug.Log("fire + player");
-                Destroy(this.gameObject);
-                Instantiate(fireboom, pos, Quaternion.Euler(-90f, 0f, 0f), null);
-               
-            }
-            if (collision.gameObject.CompareTag("UnBreakable"))
-            {
-                Destroy(this.gameObject);
-                Instantiate(fireboom, pos, Quaternion.Euler(-90f, 0f, 0f), null);
-                Debug.Log("fb + ub");
-            }
+        Vector3 pos = gameObject.transform.position;
+        if (collision.gameObject.CompareTag("Player")) {
+            Debug.Log("fire + player");
+            Destroy(this.gameObject);
+            new WaitForEndOfFrame();
+            for (int i = 0; i < FireEffectcnt; i++)
+                Instantiate(fireboom, pos, Quaternion.Euler(0f, 0f, -90f), null);
+        }
+        if (collision.gameObject.CompareTag("UnBreakable")) {
+            Destroy(this.gameObject);
+            new WaitForEndOfFrame();
+            for (int i = 0; i < FireEffectcnt; i++)
+                Instantiate(fireboom, pos, Quaternion.Euler(0f, 0f, -90f), null);
         }
     }
 }
