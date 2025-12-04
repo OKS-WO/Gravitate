@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3664760400432210705}
   - component: {fileID: -4674170760138543857}
   m_Layer: 0
-  m_Name: shockwave_temp
+  m_Name: Bomb_Shock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ WindZone:
   m_Enabled: 1
   m_Mode: 1
   m_Radius: 6
-  m_WindMain: 50
+  m_WindMain: 100
   m_WindTurbulence: 1
   m_WindPulseMagnitude: 0.5
   m_WindPulseFrequency: 0.01
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87109687465b7f4e8ef44206d956caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 200
+  force: 800
 --- !u!50 &5540585820469221885
 Rigidbody2D:
   serializedVersion: 4
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 6
 --- !u!114 &-4674170760138543857
 MonoBehaviour:
   m_ObjectHideFlags: 0
