@@ -4649,6 +4649,7 @@ GameObject:
   - component: {fileID: 306042868}
   - component: {fileID: 306042867}
   - component: {fileID: 306042866}
+  - component: {fileID: 306042879}
   m_Layer: 6
   m_Name: 'Player '
   m_TagString: Player
@@ -4801,6 +4802,7 @@ MonoBehaviour:
   isClimbing: 0
   isWallJumping: 0
   isSwing: 0
+  onSeesaw: 0
   numberOfGravityCore: 0
   jump_clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   die_clip: {fileID: 8300000, guid: b9eff218e132a4e76be78840eca96fb2, type: 3}
@@ -5068,6 +5070,18 @@ Transform:
   - {fileID: 1957173416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &306042879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306042865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395e4014e197faa4a93a82fd9df39101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &306811173
 GameObject:
   m_ObjectHideFlags: 0

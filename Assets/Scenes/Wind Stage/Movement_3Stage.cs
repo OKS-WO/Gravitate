@@ -21,6 +21,7 @@ public class Movement_3Stage : MonoBehaviour
     public bool isClimbing = false;
     public bool isWallJumping = false;
     public bool isSwing = false;
+    public bool onSeesaw = false;
     public int numberOfGravityCore = 0;
 
     public AudioClip jump_clip;
@@ -49,7 +50,7 @@ public class Movement_3Stage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            if(!coll.isRope)
+            if(!coll.isRope && !onSeesaw)
                 jump();
             else if (coll.isRope == true && !coll.isGround)
             {
@@ -223,4 +224,20 @@ public class Movement_3Stage : MonoBehaviour
             nearRopeRigid = collision.gameObject.GetComponent<Rigidbody2D>();
 		}
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Seesaw"))
+        {
+            onSeesaw = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Seesaw"))
+        {
+            onSeesaw = false;
+        }
+    }
 }
