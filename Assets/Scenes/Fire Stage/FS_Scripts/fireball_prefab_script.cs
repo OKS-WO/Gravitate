@@ -32,7 +32,7 @@ public class fireball_prefab_script : MonoBehaviour
     
 
     private void OnParticleCollision(GameObject other) {
-        Debug.Log("update:fireball has collisioned with particle");
+        //Debug.Log("update:fireball has collisioned with particle");
         if (other.CompareTag("Water") && SteamEffectPreFab != null)  {
             Destroy(gameObject);
             new WaitForEndOfFrame();
@@ -45,10 +45,10 @@ public class fireball_prefab_script : MonoBehaviour
     public GameObject fireboom;
 
     private void OnCollisionEnter2D(Collision2D collision)  {
-        Debug.Log("update:fireball has collisioned with rigidbody");
+        //Debug.Log("update:fireball has collisioned with rigidbody");
         Vector3 pos = gameObject.transform.position;
         if (collision.gameObject.CompareTag("Player")) {
-            Debug.Log("fire + player");
+            //Debug.Log("fire + player");
             Destroy(this.gameObject);
             new WaitForEndOfFrame();
             for (int i = 0; i < FireEffectcnt; i++)
