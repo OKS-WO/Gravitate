@@ -46,6 +46,7 @@ public class FireStage_bomb_Script : MonoBehaviour
             for (int i = 0; i < explosion_particlecnt; i++)
             {
                 Instantiate(FireParticle, pos, Quaternion.Euler(-90f, 0f, 0f));
+                Instantiate(FireParticle, pos, Quaternion.Euler(0f, 0f, 0f));
             }
             Instantiate(Shockwave, pos, Quaternion.Euler(0f, 0f, 0f));
             Instantiate(Damagezone, pos, Quaternion.Euler(0f, 0f, 0f));
