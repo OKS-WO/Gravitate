@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FS_bomb_killzone : MonoBehaviour
 {
-    public float timecnt = 0.5f;
+    public float timecnt;
     private float destroyoffset = 0;
 
     // Update is called once per frame
