@@ -84,7 +84,8 @@ public class PlayerRespawn_3Stage : MonoBehaviour
 
         //24010148 문병제가 추가함 - 파이어볼 등의 오브젝트에 충돌해서 죽은 후에
         //죽은 장소에서 또 파이어볼이나 가시 등이 닿으면 coroutine이 반복되는 문제 발생
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        gameObject.GetComponent<ElementController_3Stage>().enabled = false;
         //해당 코드 추가했습니다, 문제되면 알려주세요...
 
 
@@ -105,7 +106,8 @@ public class PlayerRespawn_3Stage : MonoBehaviour
 
         //24010148 문병제가 추가함 - 파이어볼 등의 오브젝트에 충돌해서 죽은 후에
         //죽은 장소에서 또 파이어볼이나 가시 등이 닿으면 coroutine이 반복되는 문제 발생
-        gameObject.GetComponent<BoxCollider2D>().isTrigger =false;
+        gameObject.GetComponent<BoxCollider2D>().enabled =true;
+        gameObject.GetComponent<ElementController_3Stage>().enabled =true;
         //해당 코드 추가했습니다, 문제되면 알려주세요...
     }
 }
