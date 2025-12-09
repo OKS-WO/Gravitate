@@ -3,19 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Rope
-  - Rock
-  - Water
-  - Air
-  - Fire
-  - UnBreakable
-  - Mud
-  - Steam
-  - Spike
-  - CheckPoint
-  - Obsidian
-  - DestructibleSpike
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -23,21 +11,21 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
   - 
-  - Platform
-  - Rope
   - 
-  - Rock
-  - Water
-  - Air
-  - Fire
-  - Steam
-  - Spike
-  - CheckPoint
-  - Obsidian
-  - OneWayPlatform
-  - FallingRock
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
