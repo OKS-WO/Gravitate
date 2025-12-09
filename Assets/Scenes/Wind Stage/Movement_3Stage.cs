@@ -48,7 +48,7 @@ public class Movement_3Stage : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if(!coll.isRope && !onSeesaw)
                 jump();
