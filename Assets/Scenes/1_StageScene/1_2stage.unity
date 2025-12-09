@@ -3594,8 +3594,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 16
-  m_RefResolutionX: 720
-  m_RefResolutionY: 540
+  m_RefResolutionX: 540
+  m_RefResolutionY: 360
   m_UpscaleRT: 1
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -5132,6 +5132,7 @@ MonoBehaviour:
   isClimbing: 0
   isWallJumping: 0
   isSwing: 0
+  onSeesaw: 0
   numberOfGravityCore: 0
   jump_clip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   die_clip: {fileID: 8300000, guid: b9eff218e132a4e76be78840eca96fb2, type: 3}
@@ -7714,8 +7715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssetsPPU: 16
-  m_RefResolutionX: 720
-  m_RefResolutionY: 540
+  m_RefResolutionX: 540
+  m_RefResolutionY: 360
   m_UpscaleRT: 1
   m_PixelSnapping: 0
   m_CropFrameX: 0
@@ -7947,7 +7948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -230}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1037138872
