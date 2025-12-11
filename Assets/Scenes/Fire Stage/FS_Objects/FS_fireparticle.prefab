@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6098088126673662864}
   - component: {fileID: 345364066366689343}
   - component: {fileID: 3072314403219378818}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FS_fireparticle
   m_TagString: Fire
   m_Icon: {fileID: 0}
