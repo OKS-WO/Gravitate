@@ -5524,6 +5524,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.98
       objectReference: {fileID: 0}
+    - target: {fileID: 1138593978594880907, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Name
+      value: Signs_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cce7f5ea931569049963cde10e4e5d77, type: 3}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486893929789435107, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.62
+      objectReference: {fileID: 0}
     - target: {fileID: 3641499948040578185, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_text
       value: '
@@ -5554,6 +5578,14 @@ PrefabInstance:
     - target: {fileID: 4113225906635546590, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529181427842117624, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529181427842117624, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.38
       objectReference: {fileID: 0}
     - target: {fileID: 7177293428586474880, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_Name
@@ -5598,6 +5630,22 @@ PrefabInstance:
     - target: {fileID: 7679616141492531106, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_text
+      value: '
+
+
+
+        Bomb'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54226,6 +54274,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1138593978594880907, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Name
+      value: Signs_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3641499948040578185, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_text
       value: "If Failed to Launch, \nTry ESC -> Checkpoint..."
@@ -54245,6 +54301,14 @@ PrefabInstance:
     - target: {fileID: 4113225906635546590, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529181427842117624, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529181427842117624, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -34.3
       objectReference: {fileID: 0}
     - target: {fileID: 7177293428586474880, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_Name
@@ -54289,6 +54353,18 @@ PrefabInstance:
     - target: {fileID: 7679616141492531106, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_text
+      value: "If Launch \nFailed...\nTry ESC -> CheckPoint"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -169158,6 +169234,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.31
       objectReference: {fileID: 0}
+    - target: {fileID: 1138593978594880907, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Name
+      value: Signs_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_FlipY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202567325185875457, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab30a5ba8bf22d24686375e484b073e9, type: 3}
+    - target: {fileID: 2486893929789435107, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.83
+      objectReference: {fileID: 0}
     - target: {fileID: 3641499948040578185, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_text
       value: '
@@ -169204,6 +169296,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4529181427842117624, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 40.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529181427842117624, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -24.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7177293428586474880, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_Name
       value: Signs (3)
@@ -169247,6 +169347,23 @@ PrefabInstance:
     - target: {fileID: 7679616141492531106, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_text
+      value: '
+
+
+        Steam
+
+        Sensor'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026086912619404479, guid: 0e450a58b6e123d49822976e8abec1d8, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -186489,6 +186606,6 @@ SceneRoots:
   - {fileID: 1633392263}
   - {fileID: 1798301156}
   - {fileID: 1465996251}
-  - {fileID: 487600858}
   - {fileID: 342024610}
+  - {fileID: 487600858}
   - {fileID: 1403205391}
