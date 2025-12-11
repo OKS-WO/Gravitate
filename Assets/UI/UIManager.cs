@@ -45,19 +45,19 @@ public class UIManager : MonoBehaviour
         {
             case "Q": // 흙
                 targetSlot = slotQ;
-                targetSprite = icon_Soil;
+                targetSprite = icon_Air;
                 break;
             case "W": // 물
                 targetSlot = slotW;
-                targetSprite = icon_Water;
+                targetSprite = icon_Soil;
                 break;
             case "E": // 불
                 targetSlot = slotE;
-                targetSprite = icon_Fire;
+                targetSprite = icon_Water;
                 break;
             case "R": // 바람
                 targetSlot = slotR;
-                targetSprite = icon_Air;
+                targetSprite = icon_Fire;
                 break;
         }
 
