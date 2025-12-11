@@ -59369,7 +59369,7 @@ MonoBehaviour:
   isSetting: 0
   soil: 1
   water: 1
-  air: 0
+  air: 1
   fire: 0
 --- !u!233 &681697404
 HingeJoint2D:
